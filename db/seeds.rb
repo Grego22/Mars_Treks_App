@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#
+# Vandenburg
+# Cape Caneveral Florida
+# Texas
+
+# Pavonis Mons (Tharsis)
+# Arabia Terra
+# Hellas Basin
+# Valles Marineris
+# Planum Boreum
