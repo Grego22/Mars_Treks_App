@@ -1,0 +1,2 @@
+class SpaceFlightsController < ApplicationController
+end
