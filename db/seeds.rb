@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
-# Vandenburg
+ Airports = { "Vandenburg", "Cape Caneveral Florida",
 # Cape Caneveral Florida
 # Texas
 

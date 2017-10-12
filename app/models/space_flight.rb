@@ -1,4 +1,4 @@
 class SpaceFlight < ApplicationRecord
-    has_many :flight_times
+    belongs_to :trip
 
 end
