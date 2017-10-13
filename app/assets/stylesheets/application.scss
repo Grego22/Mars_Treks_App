@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
 
-
+//= require_tree .
  */
 @import 'font-awesome';
 @import 'bootstrap-social';
@@ -21,4 +21,4 @@
 
 @import 'custom';
 @import 'settings';
-@import 'carousel';
+@import 'carousel.css';
