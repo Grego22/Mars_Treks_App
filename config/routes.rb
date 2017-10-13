@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'space_flights#index'
+  root 'space_flights#show'
 end
