@@ -29,23 +29,23 @@
 var Hashtable = (function() {
 	var FUNCTION = "function";
 
-	var arrayRemoveAt = (typeof Array.prototype.splice == FUNCTION) ?
-		function(arr, idx) {
-			arr.splice(idx, 1);
-		} :
-
-		function(arr, idx) {
-			var itemsAfterDeleted, i, len;
-			if (idx === arr.length - 1) {
-				arr.length = idx;
-			} else {
-				itemsAfterDeleted = arr.slice(idx + 1);
-				arr.length = idx;
-				for (i = 0, len = itemsAfterDeleted.length; i < len; ++i) {
-					arr[idx + i] = itemsAfterDeleted[i];
+	var arrayRemoveAt =
+		typeof Array.prototype.splice == FUNCTION
+			? function(arr, idx) {
+					arr.splice(idx, 1);
 				}
-			}
-		};
+			: function(arr, idx) {
+					var itemsAfterDeleted, i, len;
+					if (idx === arr.length - 1) {
+						arr.length = idx;
+					} else {
+						itemsAfterDeleted = arr.slice(idx + 1);
+						arr.length = idx;
+						for (i = 0, len = itemsAfterDeleted.length; i < len; ++i) {
+							arr[idx + i] = itemsAfterDeleted[i];
+						}
+					}
+				};
 
 	function hashObject(obj) {
 		var hashCode;
@@ -54,7 +54,7 @@ var Hashtable = (function() {
 		} else if (typeof obj.hashCode == FUNCTION) {
 			// Check the hashCode method really has returned a string
 			hashCode = obj.hashCode();
-			return (typeof hashCode == "string") ? hashCode : hashObject(hashCode);
+			return typeof hashCode == "string" ? hashCode : hashObject(hashCode);
 		} else if (typeof obj.toString == FUNCTION) {
 			return obj.toString();
 		} else {
@@ -73,8 +73,9 @@ var Hashtable = (function() {
 	}
 
 	function equals_fixedValueNoEquals(fixedValue, variableValue) {
-		return (typeof variableValue.equals == FUNCTION) ?
-			   variableValue.equals(fixedValue) : (fixedValue === variableValue);
+		return typeof variableValue.equals == FUNCTION
+			? variableValue.equals(fixedValue)
+			: fixedValue === variableValue;
 	}
 
 	function createKeyValCheck(kvStr) {
@@ -87,12 +88,13 @@ var Hashtable = (function() {
 		};
 	}
 
-	var checkKey = createKeyValCheck("key"), checkValue = createKeyValCheck("value");
+	var checkKey = createKeyValCheck("key"),
+		checkValue = createKeyValCheck("value");
 
 	/*----------------------------------------------------------------------------------------------------------------*/
 
 	function Bucket(hash, firstKey, firstValue, equalityFunction) {
-        this[0] = hash;
+		this[0] = hash;
 		this.entries = [];
 		this.addEntry(firstKey, firstValue);
 
@@ -103,21 +105,25 @@ var Hashtable = (function() {
 		}
 	}
 
-	var EXISTENCE = 0, ENTRY = 1, ENTRY_INDEX_AND_VALUE = 2;
+	var EXISTENCE = 0,
+		ENTRY = 1,
+		ENTRY_INDEX_AND_VALUE = 2;
 
 	function createBucketSearcher(mode) {
 		return function(key) {
-			var i = this.entries.length, entry, equals = this.getEqualityFunction(key);
+			var i = this.entries.length,
+				entry,
+				equals = this.getEqualityFunction(key);
 			while (i--) {
 				entry = this.entries[i];
-				if ( equals(key, entry[0]) ) {
+				if (equals(key, entry[0])) {
 					switch (mode) {
 						case EXISTENCE:
 							return true;
 						case ENTRY:
 							return entry;
 						case ENTRY_INDEX_AND_VALUE:
-							return [ i, entry[1] ];
+							return [i, entry[1]];
 					}
 				}
 			}
@@ -136,7 +142,9 @@ var Hashtable = (function() {
 
 	Bucket.prototype = {
 		getEqualityFunction: function(searchValue) {
-			return (typeof searchValue.equals == FUNCTION) ? equals_fixedValueHasEquals : equals_fixedValueNoEquals;
+			return typeof searchValue.equals == FUNCTION
+				? equals_fixedValueHasEquals
+				: equals_fixedValueNoEquals;
 		},
 
 		getEntryForKey: createBucketSearcher(ENTRY),
@@ -173,7 +181,7 @@ var Hashtable = (function() {
 		containsValue: function(value) {
 			var i = this.entries.length;
 			while (i--) {
-				if ( value === this.entries[i][1] ) {
+				if (value === this.entries[i][1]) {
 					return true;
 				}
 			}
@@ -186,7 +194,8 @@ var Hashtable = (function() {
 	// Supporting functions for searching hashtable buckets
 
 	function searchBuckets(buckets, hash) {
-		var i = buckets.length, bucket;
+		var i = buckets.length,
+			bucket;
 		while (i--) {
 			bucket = buckets[i];
 			if (hash === bucket[0]) {
@@ -200,7 +209,7 @@ var Hashtable = (function() {
 		var bucket = bucketsByHash[hash];
 
 		// Check that this is a genuine bucket and not something inherited from the bucketsByHash's prototype
-		return ( bucket && (bucket instanceof Bucket) ) ? bucket : null;
+		return bucket && bucket instanceof Bucket ? bucket : null;
 	}
 
 	/*----------------------------------------------------------------------------------------------------------------*/
@@ -210,13 +219,20 @@ var Hashtable = (function() {
 		var buckets = [];
 		var bucketsByHash = {};
 
-		var hashingFunction = (typeof hashingFunctionParam == FUNCTION) ? hashingFunctionParam : hashObject;
-		var equalityFunction = (typeof equalityFunctionParam == FUNCTION) ? equalityFunctionParam : null;
+		var hashingFunction =
+			typeof hashingFunctionParam == FUNCTION
+				? hashingFunctionParam
+				: hashObject;
+		var equalityFunction =
+			typeof equalityFunctionParam == FUNCTION ? equalityFunctionParam : null;
 
 		this.put = function(key, value) {
 			checkKey(key);
 			checkValue(value);
-			var hash = hashingFunction(key), bucket, bucketEntry, oldValue = null;
+			var hash = hashingFunction(key),
+				bucket,
+				bucketEntry,
+				oldValue = null;
 
 			// Check if a bucket exists for the bucket key
 			bucket = getBucketForHash(bucketsByHash, hash);
@@ -290,7 +306,8 @@ var Hashtable = (function() {
 
 		var createBucketAggregator = function(bucketFuncName) {
 			return function() {
-				var aggregated = [], i = buckets.length;
+				var aggregated = [],
+					i = buckets.length;
 				while (i--) {
 					buckets[i][bucketFuncName](aggregated);
 				}
@@ -305,7 +322,9 @@ var Hashtable = (function() {
 		this.remove = function(key) {
 			checkKey(key);
 
-			var hash = hashingFunction(key), bucketIndex, oldValue = null;
+			var hash = hashingFunction(key),
+				bucketIndex,
+				oldValue = null;
 
 			// Check if a bucket exists for the bucket key
 			var bucket = getBucketForHash(bucketsByHash, hash);
@@ -327,7 +346,8 @@ var Hashtable = (function() {
 		};
 
 		this.size = function() {
-			var total = 0, i = buckets.length;
+			var total = 0,
+				i = buckets.length;
 			while (i--) {
 				total += buckets[i].entries.length;
 			}
@@ -335,7 +355,9 @@ var Hashtable = (function() {
 		};
 
 		this.each = function(callback) {
-			var entries = that.entries(), i = entries.length, entry;
+			var entries = that.entries(),
+				i = entries.length,
+				entry;
 			while (i--) {
 				entry = entries[i];
 				callback(entry[0], entry[1]);
@@ -344,15 +366,19 @@ var Hashtable = (function() {
 
 		this.putAll = function(hashtable, conflictCallback) {
 			var entries = hashtable.entries();
-			var entry, key, value, thisValue, i = entries.length;
-			var hasConflictCallback = (typeof conflictCallback == FUNCTION);
+			var entry,
+				key,
+				value,
+				thisValue,
+				i = entries.length;
+			var hasConflictCallback = typeof conflictCallback == FUNCTION;
 			while (i--) {
 				entry = entries[i];
 				key = entry[0];
 				value = entry[1];
 
 				// Check for a conflict. The default behaviour is to overwrite the value for an existing key
-				if ( hasConflictCallback && (thisValue = that.get(key)) ) {
+				if (hasConflictCallback && (thisValue = that.get(key))) {
 					value = conflictCallback(key, thisValue, value);
 				}
 				that.put(key, value);
