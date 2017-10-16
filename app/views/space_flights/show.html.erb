@@ -232,13 +232,13 @@
 						<ul id="flights2foo">
 							<li class="fl1">
 								<ul class="ftable2">
-									<li class="fch2"><img id="blueoriginlogo"src="Greg_Images/Blue_Origin_Logo.jpg"  alt=""></li>
+									<li class="fch2"><%=image_tag ("Blue_Origin_Logo.jpg"), :id=> "blueoriginlogo"%></li>
 									<li><a href="#ticketid0123" class="fscrollto">764</a></li>
 								</ul>
 							</li>
 							<li class="fl1">
 								<ul class="ftable2">
-									<li class="fch2"><img id="spacexlogo"src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt=""></li>
+									<li class="fch2"><%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "spacexlogo"%></li>
 									<li><a href="#ticketid0123" class="fscrollto">764</a></li>
 									<li><a href="#ticketid0123" class="fscrollto">788</a></li>
 									<li><a href="#ticketid0123" class="fscrollto">878</a></li>
@@ -250,15 +250,15 @@
 							</li>
 							<li class="fl1">
 								<ul class="ftable2">
-									<li class="fch2"><img id="nasalogo" src="Greg_Images/nasa_logo.png"  alt=""></li>
+									<li class="fch2"><%=image_tag ("nasa_logo.png"), :id=> "nasalogo"%></li>
 									<li><a href="#ticketid0123" class="fscrollto">764</a></li>
 									<li><a href="#ticketid0123" class="fscrollto">788</a></li>
 								</ul>
 							</li>
 						</ul>
 						<div class="clearfix"></div>
-						<a id="flights2prev_btn" class="flights2prev" href="#"><img src="images/spacer.png" alt=""/></a>
-						<a id="flights2next_btn" class="flights2next" href="#"><img src="images/spacer.png" alt=""/></a>
+						<a id="flights2prev_btn" class="flights2prev" href="#"><%=image_tag("spacer.png")%></a>
+						<a id="flights2next_btn" class="flights2next" href="#"><%=image_tag("spacer.png")%></a>
 					</div>
 				</div>
 				<!-- End of Carousel -->
@@ -776,7 +776,7 @@
 						<div class="frow1">
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id= "smallspacexlogo" src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt="">
+									<%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "smallspacexlogo"%>
 								</li>
 								<li class="ft2">
 									<div class="radio radiomargin0">
