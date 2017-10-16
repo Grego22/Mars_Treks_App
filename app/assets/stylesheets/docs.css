@@ -567,7 +567,7 @@ h1[id] {
 }
 /* Echo out a label for the example */
 .bs-example:after {
-	content: "Example";
+	content: "Flight Search";
 	position: absolute;
 	top: 15px;
 	left: 15px;
