@@ -25,7 +25,7 @@
 				  <span class="icon-bar"></span>
 				  <span class="icon-bar"></span>
 				</button>
-				<a href="index.html" class="navbar-brand"><img src="images/logo.png" alt="Travel Agency Logo" class="logo"/></a>
+				<a href="index.html" class="navbar-brand"><%=image_tag("logo.png", :class=> "logo") %></a>
 			  </div>
 			  <div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -218,8 +218,8 @@
 							</li>
 						</ul>
 						<div class="clearfix"></div>
-						<a id="flightsprev_btn" class="flightsprev" href="#"><img src="images/spacer.png" alt=""/></a>
-						<a id="flightsnext_btn" class="flightsnext" href="#"><img src="images/spacer.png" alt=""/></a>
+						<a id="flightsprev_btn" class="flightsprev" href="#"><%=image_tag("spacer.png")%></a>
+						<a id="flightsnext_btn" class="flightsnext" href="#"><%=image_tag("spacer.png")%></a>
 					</div>
 				</div>
 				<!-- End of Carousel -->
@@ -838,7 +838,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id= "smallspacexlogo" src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt="">
+									<%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "smallspacexlogo"%>
 								</li>
 								<li class="ft2">
 									<div class="radio radiomargin0">
@@ -904,7 +904,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id= "smallspacexlogo" src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt="">
+									<%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "smallspacexlogo"%>
 								</li>
 								<li class="ft2">
 									<div class="radio radiomargin0">
@@ -981,7 +981,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id="smallblueoriginlogo"src="Greg_Images/Blue_Origin_Logo.jpg"  alt="">
+									<%=image_tag ("Blue_Origin_Logo.jpg"), :id=> "smallblueoriginlogo"%>
 								</li>
 								<li class="ft2">
 										<div class="radio radiomargin0">
@@ -1050,7 +1050,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id="smallblueoriginlogo"src="Greg_Images/Blue_Origin_Logo.jpg"  alt="">
+									<%=image_tag ("Blue_Origin_Logo.jpg"), :id=> "smallblueoriginlogo"%>
 								</li>
 								<li class="ft2">
 										<div class="radio radiomargin0">
@@ -1084,7 +1084,7 @@
 
 								<ul class="flightstable mt20">
 									<li class="ft1">
-                    <img id="smallblueoriginlogo"src="Greg_Images/Blue_Origin_Logo.jpg"  alt="">
+                    <%=image_tag ("Blue_Origin_Logo.jpg"), :id=> "smallblueoriginlogo"%>
 									</li>
 									<li class="ft2">
 										Duration<br/>
@@ -1128,7 +1128,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-									<img id="smallnasalogo"src="Greg_Images/Nasa_Small_Logo.jpeg"  alt="">
+									<%=image_tag ("Nasa_Small_Logo.jpeg"), :id=> "smallnasalogo"%>
 								</li>
 								<li class="ft2">
 										<div class="radio radiomargin0">
@@ -1196,7 +1196,7 @@
 						<div class="frow2">
 							<ul class="flightstable mt20">
 								<li class="ft1">
-                  <img id="smallnasalogo"src="Greg_Images/Nasa_Small_Logo.jpeg"  alt="">
+                  <%=image_tag ("Nasa_Small_Logo.jpeg"), :id=> "smallnasalogo"%>
 								</li>
 								<li class="ft2">
 										<div class="radio radiomargin0">
@@ -1273,7 +1273,7 @@
 
 							<ul class="flightstable mt20">
 								<li class="ft1">
-                  <img id= "smallspacexlogo" src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt="">
+                <%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "smallspacexlogo"%>
 								</li>
 								<li class="ft2">
 										<div class="radio radiomargin0">
@@ -1341,7 +1341,7 @@
 						<div class="frow2">
 							<ul class="flightstable mt20">
 								<li class="ft1">
-                  <img id= "smallspacexlogo" src="Greg_Images/Spacex_Logo_Blue.jpeg"  alt="">
+                <%=image_tag ("Spacex_Logo_Blue.jpeg"), :id=> "smallspacexlogo"%>
 								<li class="ft2">
 										<div class="radio radiomargin0">
 										  <label>
@@ -1447,13 +1447,13 @@
 			<div class="col-md-3">
 				<span class="ftitleblack">Connect With Mars Treks</span>
 				<div class="scont">
-					<a href="#" class="social1b"><img src="Greg_Images/GitHub-Mark-Light-32px.png" alt=""/>
+					<a href="#" class="social1b"><%=image_tag("GitHub-Mark-Light-32px.png")%>
           </a>
-					<a href="https://github.com/Grego22" class="social2b"><img src="images/icon-twitter.png" alt=""/></a>
-					<a href="https://www.linkedin.com/in/greggarvillejr/" class="social3b"><img src="Greg_Images/Linked_in_logo.png" alt=""/></a>
+					<a href="https://github.com/Grego22" class="social2b"><%=image_tag src="icon-twitter.png"%></a>
+					<a href="https://www.linkedin.com/in/greggarvillejr/" class="social3b"><%=image_tag("Linked_in_logo.png")%></a>
 					<!-- <a href="#" class="social4b"><img src="images/icon-youtube.png" alt=""/></a> -->
 					<br/><br/><br/>
-					<a href="#"><img src="images/logosmal2.png" alt="" /></a><br/>
+					<a href="#"><%=image_tag("logosmal2.png")%></a><br/>
 					<span class="grey2">&copy; 2017  |  <a href="#">Privacy Policy</a><br/>
 					All Rights Reserved </span>
 					<br/><br/>
@@ -1515,7 +1515,7 @@
 		<a href="#">Special offers</a> |
 		<a href="#">Blog</a> |
 		<a href="#">Contact</a>
-		<a href="#top" class="gotop scroll"><img src="images/spacer.png" alt=""/></a>
+		<a href="#top" class="gotop scroll"><%=image_tag("spacer.png")%></a>
 		</div>
 	</div>
   </body>
