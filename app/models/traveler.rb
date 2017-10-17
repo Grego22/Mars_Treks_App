@@ -1,5 +1,5 @@
 class Traveler < ApplicationRecord
-  belongs_to :Trip
+  belongs_to :trip
 
-  validates :first_name, :last_name, email, presence:true
+  validates :first_name, :last_name, :email, presence:true
 end
