@@ -11,14 +11,16 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import './theme/bootstrap';
 
-@import 'font-awesome';
-@import 'bootstrap-social';
+/*
+ = require 'theme/bootstrap'
+ = require 'font-awesome'
+ = require 'bootstrap-social'
 
-@import './theme/custom';
-@import 'greg_index';
-@import './theme/carousel/carousel';
-@import './theme/fullscreen';
-@import './theme/rs-plugin/settings';
-@import './theme/jquery_ui';
+ = require 'theme/custom'
+ = require 'greg_index'
+ = require 'theme/carousel/carousel'
+ = require 'theme/fullscreen'
+ = require 'theme/rs-plugin/settings'
+ = require 'theme/jquery_ui'
+*/
