@@ -12,4 +12,15 @@
 //
 //= require rails-ujs
 //= require 'jquery'
-//= require_tree .
+//= require 'theme/js-index3'
+//= require 'theme/functions'
+//= require 'theme/jquery-ui'
+//= require 'theme/jquery.easing.js'
+//= require 'theme/rs-plugin/jquery.themepunch.revolution.min'
+//= require 'theme/jquery.nicescroll.min.js'
+//= require 'theme/jquery.carouFredSel-6.2.1-packed'
+//= require 'theme/jquery.touchSwipe.min'
+//= require 'theme/jquery.mousewheel.min'
+//= require 'theme/jquery.transit.min'
+//= require 'theme/jquery.ba-throttle-debounce.min'
+//= require 'theme/jquery.customselect.js'
