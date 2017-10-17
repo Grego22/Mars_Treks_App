@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20171011150255) do
   enable_extension "plpgsql"
 
   create_table "space_flights", force: :cascade do |t|
+    t.float "price"
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

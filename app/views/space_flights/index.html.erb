@@ -299,10 +299,10 @@ tpj(document).ready(function() {
 
 					<div class="tab-content" id="myTabContent">
 						<div id="air" class="tab-pane fade active in">
-              <%= form_for @SpaceFlight, html: {method: :get}, remote: true do |f|%>
+              <%= form_for @space_flight, html: {method: :get}, remote: true do |f|%>
 							<div class="w50percent">
 								<div class="wh90percent textleft">
-                  <%=f.label :from_airport%>
+                  <%=f.label :from_airport %>
                   <%=f.select (:from_airport, @spaceports, {selected: @from}, {:class => 'form-control', id: 'from_airport'})%>
 									<span class="opensans size13"><b>Flying from</b></span>
 									<input type="text" class="form-control" placeholder="City or airport">
@@ -316,11 +316,13 @@ tpj(document).ready(function() {
 								</div>
 							</div>
 
-
+\
 							<div class="clearfix"></div><br/>
 
 							<div class="w50percent">
 								<div class="wh90percent textleft">
+                  <%= f.label :date%>
+                  <%= f.select :date, @dates, {selected: @date}, {:class => 'form-control'})%>
 									<span class="opensans size13"><b>Departing</b></span>
 									<input type="text" class="form-control mySelectCalendar" id="datepicker3" placeholder="mm/dd/yyyy"/>
 								</div>
