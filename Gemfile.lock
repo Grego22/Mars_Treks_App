@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/stympy/faker.git
+  revision: 657162ad07a574f5e6b22d009eb6ff1253786bca
+  branch: master
+  specs:
+    faker (1.8.4)
+      i18n (~> 0.5)
+
+GIT
   remote: https://github.com/gstark/bootstrap-generators
   revision: c97912feb2d6d42cb9069d4d3be2efd42011a7a2
   branch: includes-simplified-controller-scaffold
@@ -192,6 +200,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   dotenv-rails
+  faker!
   font-awesome-rails
   jquery-rails
   jquery-ui-rails
