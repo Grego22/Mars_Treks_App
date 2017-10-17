@@ -5,4 +5,5 @@ class SpaceFlight < ApplicationRecord
     def self.format_date
       date = date.to_date
       date.begnning_of_day..date.end_of_day
+    end
 end
