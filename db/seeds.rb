@@ -7,7 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #
- Airports = { "Vandenburg", "Cape Caneveral Florida",
+ Spaceports.create = [{ name: "Vandenburg"}, {name: "Cape Caneveral"}, {name: "Pavonis Mons"}, {name: "Arabia Terra"},
+   {name: "Hellas Basin"}, {name: "Valles Marineris"}, {name: "Planum Boreum"}]
+
+
+
+all spaceports = Spaceports.all
+
+
 # Cape Caneveral Florida
 # Texas
 
