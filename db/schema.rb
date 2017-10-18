@@ -16,21 +16,30 @@ ActiveRecord::Schema.define(version: 20171011150255) do
   enable_extension "plpgsql"
 
   create_table "space_flights", force: :cascade do |t|
+    t.datetime "date"
+    t.integer "departure_airport_id"
+    t.integer "destination_airport_id"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "spaceports", force: :cascade do |t|
+    t.string "code"
+    t.string "station"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "travelers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
+    t.integer "flight_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
